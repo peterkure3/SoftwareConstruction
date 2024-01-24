@@ -1,0 +1,73 @@
+PROGRAMME: BSCS 
+LECTURER: MR. SIMON LUBAMBO
+KURE PETER
+NIRINGIYE ALLAN SMITH
+NYUMBE WILSON
+
+What is the software development lifecycle(SDLC)?
+The software development lifecycle is a framework that defines developing the steps involved in the development of software ay each phase, covering the detailed plan for building, deploying, and maintaining the software.
+
+There are seven stages of the software development lifecycle
+1.Requirements and analysis
+This is the first and fundamental stage of SDLC. Business analysts gather requirements from their customers, target market, and industry experts to create a Business Specification (BS) document.
+
+2.Project Planning
+Based on the Business Specification document, senior development team members bring together the input of stakeholders and experts to plan out a software development project.
+
+3.Design
+This stage focuses on designing the product. It involves product architects and developers who will ideate and present a design of the product. They may present more than one design approach, and these ideas are documented in a Design Document Specification (DDS).
+
+4.Coding and Implementation
+In this stage, production commences and the product is built. The programming code is built per the DDS (Stage 3), so the product can be created with the utmost efficiency. Developers use various tools and programming languages to build the code. These are selected based on the demands of the software being developed.
+
+Some of the programming tools may involve: 
+
+Compilers 
+Interpreters
+Debuggers
+The programming languages may entail: 
+
+C
+C++
+Python
+Java 
+PHP
+
+5.Testing
+Stage 5 is where the development team conducts software testing to find errors and deficiencies. Here the product is checked to see if right results are produced.
+
+6.Deployment
+Once the software application has undergone testing and QA, it is delivered to the customer. This stage usually involves deployment engineers who make software available to customers. They may install the software at a company and/or help individual customers run the application on their computers. 
+
+7.Maintenance
+Because a software product’s usage varies from customer to customer (each person has different needs), there may be unique issues that come up and need to be addressed. These customer issues are solved in this maintenance stage. 
+
+
+Methods top companies implement:
+
+HP: Waterfall and Agile 
+Requirements and analysis: Conducts a comprehensive analysis, considering technical feasibility, resource availability, and market demand.
+Project Planning: Adapts planning methodologies based on project size, utilizing both Waterfall and Agile planning principles. 
+Design: Considers both hardware and software design elements.
+Coding and Implementation: Strong emphasis on code quality, testing, and collaboration between development and testing teams.
+Testing: Emphasizes rigorous testing, including unit testing, integration testing, and system testing
+Deployment:  Deployment methods vary based on the project methodology. Waterfall projects may have planned deployment cycles, while Agile projects may involve continuous deployment
+Maintenance: Provides ongoing support with a focus on resolving issues and releasing updates. 
+
+Amazon:Agile Development
+Requirements and analysis:Gathers requirements through a customer-centric approach, using data and customer feedback.
+Project Planning: Utilizes Agile methodologies for dynamic project planning.
+Design: Applies Agile design principles, involving cross-functional teams in collaborative design sessions.
+Coding and Implementation: Emphasizes Agile coding practices with a focus on continuous integration and collaboration. 
+Testing: Relies on extensive automated testing for both functional and non-functional aspects
+Deployment: Follows continuous deployment practices, allowing for rapid release cycles. 
+Maintenance: Continuously monitors and updates services based on customer feedback and changing requirements
+
+Sony: Waterfall and Iterative Development
+Requirements and analysis: Evaluates requirements with a focus on innovation and market demand.
+Project Planning: Incorporates innovative project planning to align with hardware and software development cycles. 
+Design: Focuses on innovative design solutions, considering both hardware and software aspects.
+Coding and Implementation: Implements innovative features with a focus on both hardware and software coding.
+Testing: Maintains high-quality standards through comprehensive testing methods based on the project's hardware and software components.
+Deployment: Adapts deployment methods based on project requirements, emphasizing coordinated hardware and software releases.
+Maintenance: Provides ongoing maintenance and support, especially for innovative products.
