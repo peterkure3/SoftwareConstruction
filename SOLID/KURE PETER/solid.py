@@ -56,8 +56,11 @@ if __name__ == "__main__":
 
     # Creating a list of report generators with instances of ManagerreportGenerator and DeveloperReportGenerator
     report_generators = [ManagerReportGenerator(), DeveloperReportGenerator()]
-    report_generator.generate_report(manager)
-    report_generator.generate_report(developer)
+
+    # looping through the list
+    for generator in report_generators: 
+        generator.generate_report(developer)
+        generator.generate_report(manager)
 
     bonus_calculator = BonusCalculator()
     manager_bonus = bonus_calculator.calculate_bonus(manager)
