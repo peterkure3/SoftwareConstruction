@@ -15,6 +15,9 @@ class Manager(Employee):
     def calculate_bonus(self):
         return 1000 #Return fixed bonus for managers
     
+    def manage_team(self): #Define manage_team method
+        print(f"{self.name} is managing the team.") #print statement for managing team
+
 #define class developer to inherit from Employee
 class Developer(Employee):
     # Override the abstract class method in the employee class
@@ -24,7 +27,7 @@ class Developer(Employee):
     def code_review(self): #define code_review method
     # Print conducting review statement
         print(f"{self.name} is conducting a code review.")
-        
+
 class ReportGenerator(ABC): #Define abstract report generator inheriting from ABC
     @abstractmethod
     def generate_report(self, employee):
