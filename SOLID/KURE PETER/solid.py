@@ -16,7 +16,7 @@ class Manager(Employee):
         return 1000 #Return fixed bonus for managers
     
     def manage_team(self): #Define manage_team method
-        print(f"{self.name} is managing the team.") #print statement for managing team
+        return f"{self.name} is managing the team." #return statement for managing team
 
 #define class developer to inherit from Employee
 class Developer(Employee):
@@ -26,7 +26,7 @@ class Developer(Employee):
     
     def code_review(self): #define code_review method
     # Print conducting review statement
-        print(f"{self.name} is conducting a code review.")
+        return f"{self.name} is conducting a code review."
 
 class ReportGenerator(ABC): #Define abstract report generator inheriting from ABC
     @abstractmethod
