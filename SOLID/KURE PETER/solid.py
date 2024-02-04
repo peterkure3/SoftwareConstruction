@@ -1,6 +1,7 @@
 # Importing abstract base classes library
 from abc import ABC, abstractmethod
-class Employee:
+
+class Employee(ABC):# Abstract class introduced
     def __init__(self, name, role):
         self.name = name
         self.role = role
