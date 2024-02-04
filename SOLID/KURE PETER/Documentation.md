@@ -1,80 +1,73 @@
-# Reactoring Employee management system using SOLID principles
+# SOLID Refactoring Plan for ElevateHR Application
 
-## Introduction
+## Code Review and Documentation:
 
-This document provides an overview and documentation for the Employee Management System, a Python program designed to manage employees, calculate bonuses, and generate reports.
+### Conducting Code Review:
+- Identified violations of each SOLID principle: SRP, OCP, LSP, ISP, DIP.
+- Documented each identified violation, providing a rationale for deviation from SOLID principles.
 
-## Classes
+### Identified Violations and Rationale:
+1. **Single Responsibility Principle (SRP)**:
+   - **Violation**: Several classes have multiple responsibilities, such as generating reports and calculating bonuses.
+   - **Rationale**: Mixing multiple responsibilities in a single class violates SRP, leading to low cohesion and high coupling.
 
-### `Employee`
+2. **Open/Closed Principle (OCP)**:
+   - **Violation**: The code lacks support for easy extension but is not closed for modification.
+   - **Rationale**: Modifications to existing classes are required to add new functionality, violating the principle of extension without modification.
 
-- **Description**: Represents an abstract base class for all types of employees.
-- **Attributes**:
-  - `name`: String representing the name of the employee.
-- **Methods**:
-  - `calculate_bonus()`: Abstract method to calculate the bonus for the employee. Must be implemented by subclasses.
+3. **Liskov Substitution Principle (LSP)**:
+   - **Violation**: Subclasses do not always adhere to the contracts defined by their base classes.
+   - **Rationale**: This violates the principle of substitutability, leading to unexpected behavior in some scenarios.
 
-### `Manager`
+4. **Interface Segregation Principle (ISP)**:
+   - **Violation**: Some classes depend on interfaces containing methods they do not use.
+   - **Rationale**: Clients should not be forced to depend on methods they do not use, violating ISP and causing unnecessary coupling.
 
-- **Description**: Represents a subclass of `Employee` for manager employees.
-- **Methods**:
-  - `calculate_bonus()`: Calculates the bonus for the manager.
-  - `manage_team()`: Manages the team under the manager.
+5. **Dependency Inversion Principle (DIP)**:
+   - **Violation**: High-level modules depend on low-level modules, and abstractions depend on details.
+   - **Rationale**: This violates DIP, which states that abstractions should not depend on details, but rather both should depend on abstractions.
 
-### `Developer`
+## Refactoring Plan:
 
-- **Description**: Represents a subclass of `Employee` for developer employees.
-- **Methods**:
-  - `calculate_bonus()`: Calculates the bonus for the developer.
-  - `code_review()`: Conducts a code review.
+### Detailed Refactoring Plan:
+- Developed a detailed refactoring plan addressing each SOLID principle violation.
+- Prioritized refactoring tasks based on their impact on code quality and system functionality.
 
-### `ReportGenerator`
+### Refactoring Tasks:
+1. **Single Responsibility Principle (SRP)**:
+   - **Refactoring Plan**: Extract separate classes for each responsibility, such as report generation and bonus calculation.
+   - **Priority**: High impact on code quality and maintainability.
 
-- **Description**: Abstract base class for report generation.
-- **Methods**:
-  - `generate_report(employee)`: Abstract method to generate a report for the given employee.
+2. **Open/Closed Principle (OCP)**:
+   - **Refactoring Plan**: Introduce abstractions and interfaces to allow for extension without modification.
+   - **Priority**: High impact on code extensibility and flexibility.
 
-### `ManagerReportGenerator`
+3. **Liskov Substitution Principle (LSP)**:
+   - **Refactoring Plan**: Ensure that subclasses adhere to the contracts defined by their base classes.
+   - **Priority**: Medium impact on system functionality and reliability.
 
-- **Description**: Concrete implementation of `ReportGenerator` for generating manager reports.
-- **Methods**:
-  - `generate_report(manager)`: Generates a report for the manager employee.
+4. **Interface Segregation Principle (ISP)**:
+   - **Refactoring Plan**: Refactor interfaces to be more focused and contain only the methods required by clients.
+   - **Priority**: Medium impact on code readability and coupling.
 
-### `DeveloperReportGenerator`
+5. **Dependency Inversion Principle (DIP)**:
+   - **Refactoring Plan**: Apply dependency injection to invert dependencies and decouple high-level modules from low-level modules.
+   - **Priority**: Medium impact on code maintainability and testability.
 
-- **Description**: Concrete implementation of `ReportGenerator` for generating developer reports.
-- **Methods**:
-  - `generate_report(developer)`: Generates a report for the developer employee.
+## Implementation:
 
-### `BonusCalculator`
+### Executing Refactoring Plan:
+- Executed the refactoring plan systematically, addressing each violation and applying SOLID principles to relevant parts of the code.
+- Ensured that the refactored code maintains existing functionality while enhancing its modularity and extensibility.
 
-- **Description**: Calculates bonuses for employees based on their roles.
+## Testing:
 
-## Usage
+### Implementing Unit Tests:
+- Implemented comprehensive unit tests to validate the functionality of the refactored code.
+- Ensured that tests cover critical scenarios and edge cases.
 
-1. Instantiate `Manager` and `Developer` objects with respective names.
-2. Use `ManagerReportGenerator` and `DeveloperReportGenerator` to generate reports for each employee.
-3. Use `BonusCalculator` to calculate bonuses for each employee.
-4. Call specific methods like `manage_team()` or `code_review()` for manager or developer employees, respectively.
+## Documentation Update:
 
-## Example
-
-```python
-if __name__ == "__main__":
-    manager = Manager("Alice")
-    developer = Developer("Bob")
-
-    report_generators = [ManagerReportGenerator(), DeveloperReportGenerator()]
-    for generator in report_generators:
-        generator.generate_report(manager)
-        generator.generate_report(developer)
-
-    bonus_calculator = BonusCalculator()
-    manager_bonus = bonus_calculator.calculate_bonus(manager)
-    developer_bonus = bonus_calculator.calculate_bonus(developer)
-
-    print(f"Manager Bonus: ${manager_bonus}")
-    print(f"Developer Bonus: ${developer_bonus}")
-
-    manager.manage_team()
-    developer.code_review()
+### Updating Code Documentation:
+- Updated code documentation to reflect changes made during the refactoring process.
+- Clearly articulated how each SOLID principle is now adhered to in the refactored codebase.
