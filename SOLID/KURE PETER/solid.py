@@ -54,6 +54,8 @@ if __name__ == "__main__":
     manager = Manager("Alice") #Manager object with name 'Alice'
     developer = Developer("Bob")#Developer object 'developer' with name 'Bob'
 
+    # Creating a list of report generators with instances of ManagerreportGenerator and DeveloperReportGenerator
+    report_generators = [ManagerReportGenerator(), DeveloperReportGenerator()]
     report_generator.generate_report(manager)
     report_generator.generate_report(developer)
 
