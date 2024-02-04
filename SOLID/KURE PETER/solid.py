@@ -9,6 +9,8 @@ class Employee(ABC):# Abstract class introduced
     def calculate_bonus(self):
         # pass statement to provide empty method body
         pass
+# define class manager to inherit from employee
+class Manager(Employee):
 class Report:
     def generate_report(self, employee):
         if employee.role == "Manager":
