@@ -25,7 +25,10 @@ class ManagerReportGenerator(ReportGenerator): #define subclass ManagerGenerator
     def generate_report(self, manager):
         print(f"Manager Report: {manager.name}")
 
-
+class DeveloperReportGenerator(ReportGenerator): #define subclass DeveloperGeneratorReport inheriting from ReportGenerator
+    # Override the abstract method generate_report() defined in the ReportGenerator class
+    def generate_report(self, developer):
+        print(f"Developer Report: {developer.name}")
 class BonusCalculator:
     def calculate_bonus(self, employee):
         if employee.role == "Manager":
