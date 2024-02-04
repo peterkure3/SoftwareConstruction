@@ -47,25 +47,13 @@ class BonusCalculator:
     def calculate_bonus(self, employee):
         # Call calculate_bonus() method of the provided employee object
         return employee.calculate_bonus()
-class Manager(Employee):
-    def calculate_manager_bonus(self):
-        return 1000
-
-    def manage_team(self):
-        print(f"{self.name} is managing the team.")
-
-class Developer(Employee):
-    def calculate_developer_bonus(self):
-        return 500
-
-    def code_review(self):
-        print(f"{self.name} is conducting a code review.")
 
 if __name__ == "__main__":
-    manager = Manager("Alice", "Manager")
-    developer = Developer("Bob", "Developer")
 
-    report_generator = Report()
+    # Creating Manager and Developer objects
+    manager = Manager("Alice") #Manager object with name 'Alice'
+    developer = Developer("Bob")#Developer object 'developer' with name 'Bob'
+
     report_generator.generate_report(manager)
     report_generator.generate_report(developer)
 
