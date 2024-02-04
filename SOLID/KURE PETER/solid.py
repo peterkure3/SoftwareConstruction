@@ -14,6 +14,10 @@ class Manager(Employee):
     # Override the abstract class method in the employee class
     def calculate_bonus(self):
         return 1000 #Return fixed bonus for managers
+    
+#define class developer to inherit from Employee
+class Developer(Employee):
+
 class ReportGenerator(ABC): #Define abstract report generator inheriting from ABC
     @abstractmethod
     def generate_report(self, employee):
@@ -31,11 +35,8 @@ class DeveloperReportGenerator(ReportGenerator): #define subclass DeveloperGener
         print(f"Developer Report: {developer.name}")
 class BonusCalculator:
     def calculate_bonus(self, employee):
-        if employee.role == "Manager":
-            return employee.calculate_manager_bonus()
-        elif employee.role == "Developer":
-            return employee.calculate_developer_bonus()
-
+        # Call calculate_bonus() method of the provided employee object
+        return employee.calculate_bonus()
 class Manager(Employee):
     def calculate_manager_bonus(self):
         return 1000
