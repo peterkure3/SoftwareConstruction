@@ -14,18 +14,11 @@ class Manager(Employee):
     # Override the abstract class method in the employee class
     def calculate_bonus(self):
         return 1000 #Return fixed bonus for managers
-class Report:
+class ReportGenerator(ABC): #Define abstract report generator inheriting from ABC
+    @abstractmethod
     def generate_report(self, employee):
-        if employee.role == "Manager":
-            self.write_manager_report(employee)
-        elif employee.role == "Developer":
-            self.write_developer_report(employee)
-
-    def write_manager_report(self, manager):
-        print(f"Manager Report: {manager.name}")
-
-    def write_developer_report(self, developer):
-        print(f"Developer Report: {developer.name}")
+        # pass statement to provide empty method body
+        pass
 
 class BonusCalculator:
     def calculate_bonus(self, employee):
