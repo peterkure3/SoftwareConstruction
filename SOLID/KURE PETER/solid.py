@@ -11,6 +11,9 @@ class Employee(ABC):# Abstract class introduced
         pass
 # define class manager to inherit from employee
 class Manager(Employee):
+    # Override the abstract class method in the employee class
+    def calculate_bonus(self):
+        return 1000 #Return fixed bonus for managers
 class Report:
     def generate_report(self, employee):
         if employee.role == "Manager":
