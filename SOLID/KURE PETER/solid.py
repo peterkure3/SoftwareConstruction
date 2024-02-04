@@ -6,7 +6,9 @@ class Employee(ABC):# Abstract class introduced
         self.name = name
 
     @abstractmethod #@abstractmethod decosrator added to define an abstract method calculate_bonus
-
+    def calculate_bonus(self):
+        # pass statement to provide empty method body
+        pass
 class Report:
     def generate_report(self, employee):
         if employee.role == "Manager":
