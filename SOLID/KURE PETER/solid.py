@@ -20,6 +20,12 @@ class ReportGenerator(ABC): #Define abstract report generator inheriting from AB
         # pass statement to provide empty method body
         pass
 
+class ManagerReportGenerator(ReportGenerator): #define subclass ManagerGeneratorReport inheriting from ReportGenerator
+    # Override the abstract method generate_report() defined in the ReportGenerator class
+    def generate_report(self, manager):
+        print(f"Manager Report: {manager.name}")
+
+
 class BonusCalculator:
     def calculate_bonus(self, employee):
         if employee.role == "Manager":
