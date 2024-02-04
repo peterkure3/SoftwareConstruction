@@ -2,9 +2,10 @@
 from abc import ABC, abstractmethod
 
 class Employee(ABC):# Abstract class introduced
-    def __init__(self, name, role):
+    def __init__(self, name): #role attribute removed
         self.name = name
-        self.role = role
+
+    @abstractmethod #@abstractmethod decosrator added to define an abstract method calculate_bonus
 
 class Report:
     def generate_report(self, employee):
