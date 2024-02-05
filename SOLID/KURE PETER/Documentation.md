@@ -71,3 +71,128 @@
 ### Updating Code Documentation:
 - Updated code documentation to reflect changes made during the refactoring process.
 - Clearly articulated how each SOLID principle is now adhered to in the refactored codebase.
+
+## Code snippets
+## Single Responsibility Principle(SRP)
+#### Before Refactoring (SRP Violation):
+```python
+class Report:
+    def generate_report(self, employee):
+        if employee.role == "Manager":
+            self.write_manager_report(employee)
+        elif employee.role == "Developer":
+            self.write_developer_report(employee)
+
+    def write_manager_report(self, manager):
+        print(f"Manager Report: {manager.name}")
+
+    def write_developer_report(self, developer):
+        print(f"Developer Report: {developer.name}")
+```
+### After Refactoring (SRP Adherence)
+```python
+
+class ReportGenerator(ABC):
+    @abstractmethod
+    def generate_report(self, employee):
+        pass
+
+class ManagerReportGenerator(ReportGenerator):
+    def generate_report(self, manager):
+        print(f"Manager Report: {manager.name}")
+
+class DeveloperReportGenerator(ReportGenerator):
+    def generate_report(self, developer):
+        print(f"Developer Report: {developer.name}")
+```
+
+## OCP (Open/Closed Principle)
+### Before refactoring OCP violation
+```python
+  class BonusCalculator:
+    def calculate_bonus(self, employee):
+        if employee.role == "Manager":
+            return employee.calculate_manager_bonus()
+        elif employee.role == "Developer":
+            return employee.calculate_developer_bonus()
+
+```
+### After refactoring
+
+```python
+class BonusCalculator:
+    def calculate_bonus(self, employee):
+        return employee.calculate_bonus()
+
+```
+### LSP (Liskov Substitution Principle)
+
+### Before Refactoring (LSP Violation):
+```python
+class Manager(Employee):
+    def calculate_manager_bonus(self):
+        return 1000
+
+    def manage_team(self):
+        print(f"{self.name} is managing the team.")
+
+```
+### After Refactoring (LSP Adherence):
+```python
+class Manager(Employee):
+    def calculate_bonus(self):
+        return 1000
+
+    def manage_team(self):
+        print(f"{self.name} is managing the team.")
+```
+
+## ISP (Interface Segregation Principle)
+### Before Refactoring (ISP Violation):
+```python
+def generate_report(self, employee):
+        if employee.role == "Manager":
+            self.write_manager_report(employee)
+        elif employee.role == "Developer":
+            self.write_developer_report(employee)
+
+    def write_manager_report(self, manager):
+        print(f"Manager Report: {manager.name}")
+
+    def write_developer_report(self, developer):
+        print(f"Developer Report: {developer.name}")
+```
+
+### After Refactoring (ISP Adherence):
+```python
+class ReportGenerator(ABC):
+    @abstractmethod
+    def generate_report(self, employee):
+        pass
+
+class ManagerReportGenerator(ReportGenerator):
+    def generate_report(self, manager):
+        print(f"Manager Report: {manager.name}")
+
+class DeveloperReportGenerator(ReportGenerator):
+    def generate_report(self, developer):
+        print(f"Developer Report: {developer.name}")
+
+```
+
+## DIP (Dependency Inversion Principle)
+### Before Refactoring (DIP Violation):
+```python
+class BonusCalculator:
+    def calculate_bonus(self, employee):
+        return employee.calculate_bonus()
+
+```
+
+### After Refactoring (DIP Adherence):
+```python
+class BonusCalculator:
+    def calculate_bonus(self, employee):
+        return employee.calculate_bonus()
+
+```
