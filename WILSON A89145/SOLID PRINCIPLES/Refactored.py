@@ -28,6 +28,7 @@ class Developer(Employee):
         print(f"{self.name} is conducting a code review.")
 
 if __name__ == "__main__":
+# Creating Manager and Developer objects
     manager = Manager("Alice", "Manager")
     developer = Developer("Bob", "Developer")
 
