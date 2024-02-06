@@ -21,3 +21,8 @@ class Manager(Employee):
     
     def manage_team(self):
         print(f"{self.name} is managing the team.")
+
+class Developer(Employee):
+    
+    def code_review(self):
+        print(f"{self.name} is conducting a code review.")
