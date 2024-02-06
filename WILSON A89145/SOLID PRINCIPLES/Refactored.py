@@ -42,3 +42,6 @@ if __name__ == "__main__":
     print(f"Manager Bonus: ${manager_bonus}")
     print(f"Developer Bonus: ${developer_bonus}")
 
+    manager.manage_team()
+    developer.code_review() 
+
