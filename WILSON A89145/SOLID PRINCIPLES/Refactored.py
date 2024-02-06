@@ -16,3 +16,8 @@ class BonusCalculator:
             return 1000
         elif employee.role == "Developer":
            return 500
+        
+class Manager(Employee):
+    
+    def manage_team(self):
+        print(f"{self.name} is managing the team.")
