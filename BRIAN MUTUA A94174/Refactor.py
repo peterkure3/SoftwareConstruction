@@ -16,3 +16,5 @@ class BonusCalculator:
             return 1000
         elif employee.role == "Developer":
            return 500
+        
+class Manager(Employee):        
