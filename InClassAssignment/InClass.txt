@@ -1,0 +1,2 @@
+Write a function in sum_of_even that takes in a list of integers and returns a sum of all the even numbers in that list and should handle both positive and negative numbers.
+Write five tests and it should pass allof them. 
