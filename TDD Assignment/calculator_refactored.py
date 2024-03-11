@@ -1,19 +1,40 @@
+import math
+
 class Calculator:
-    
     def add(self, a, b):
-        # Addition operation
+        """Add two numbers."""
         return a + b
 
     def subtract(self, a, b):
-        # Subtraction operation
+        """Subtract two numbers."""
         return a - b
 
     def multiply(self, a, b):
-        # Multiplication operation
+        """Multiply two numbers."""
         return a * b
 
     def divide(self, a, b):
-        # Division operation with a check for division by zero
+        """Divide two numbers."""
         if b == 0:
             raise ValueError("Cannot divide by zero")
         return a / b
+
+    def sin(self, angle):
+        """Calculate the sine of an angle."""
+        return math.sin(angle)
+
+    def cos(self, angle):
+        """Calculate the cosine of an angle."""
+        return math.cos(angle)
+
+    def tan(self, angle):
+        """Calculate the tangent of an angle."""
+        return math.tan(angle)
+
+    def sqrt(self, num):
+        """Calculate the square root of a number."""
+        return math.sqrt(num)
+
+    def cbrt(self, num):
+        """Calculate the cube root of a number."""
+        return num**(1/3)
